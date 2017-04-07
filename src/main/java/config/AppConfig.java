@@ -1,12 +1,5 @@
 package config;
 
-import dao.AreaDao;
-import dao.BandDao;
-import dao.EventDao;
-
-import dao.impl.*;
-import entity.Artist;
-import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -18,10 +11,6 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
-import service.AreaService;
-import service.ArtistService;
-import service.BandService;
-import service.EventService;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -74,6 +63,4 @@ public class AppConfig {
     public PlatformTransactionManager transactionManager() {
         return new JpaTransactionManager(entityManagerFactory());
     }
-
-
 }

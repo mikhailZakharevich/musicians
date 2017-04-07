@@ -15,7 +15,7 @@ public class HelloController {
 
     @GetMapping(value = "/")
     public String getHelloPage() {
-         return "musicIndex.jsp";
+         return "musicIndex";
     }
 
     @GetMapping("/hello")

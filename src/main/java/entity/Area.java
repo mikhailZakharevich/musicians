@@ -35,7 +35,7 @@ public class Area {
         this.address = address;
     }
 
-    public int getNumOfPlaces() {
+    public Integer getNumOfPlaces() {
         return numberOfPlaces;
     }
     public void setNumOfPlaces(Integer numOfPlaces) {

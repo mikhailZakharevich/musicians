@@ -25,7 +25,6 @@ public class AreaService {
     }
 
     public List<Area> findAll() {
-        System.out.println("Amount of available addresses");
         return (List<Area>) areaRepository.findAll();
     }
 

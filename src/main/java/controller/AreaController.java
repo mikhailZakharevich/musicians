@@ -4,17 +4,8 @@ import entity.Area;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.View;
+import org.springframework.web.bind.annotation.*;
 import service.AreaService;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
 
 /**
  * Created by eugen on 4/7/17.
@@ -46,6 +37,12 @@ public class AreaController {
     @PostMapping
     public String createArea(Area area) {
         areaService.save(area);
+        return "redirect:/area";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteArea(@PathVariable Integer id){
+        areaService.delete(id);
         return "redirect:/area";
     }
 }

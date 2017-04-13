@@ -2,18 +2,26 @@ package entity;
 
 import lombok.*;
 
+import javax.persistence.*;
 import java.util.List;
 
 /**
  * Created by eugen on 3/3/17.
  */
+@Entity
 public class Artist {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "artist_id")
     private Integer id;
 
     private String name;
 
     private String surname;
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    private Band band;
 
     public Artist() {
     }
@@ -28,16 +36,6 @@ public class Artist {
 
     public String getName() {
         return name;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Artist{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", Instrument=" + instrumentList +
-                '}';
     }
 
     public void setName(String name) {
@@ -60,5 +58,20 @@ public class Artist {
         this.instrumentList = instrumentList;
     }
 
+    @Override
+    public String toString() {
+        return "Artist{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", Instrument=" + instrumentList +
+                '}';
+    }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

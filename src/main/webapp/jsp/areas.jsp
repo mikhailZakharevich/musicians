@@ -45,6 +45,7 @@
     <td>${area.numOfPlaces}</td>
     <td>${area.address}</td>
     <td><a href="${pageContext.request.contextPath}/area/${area.id}">Показать</a> </td>
+    <td><a href="${pageContext.request.contextPath}/area/delete/${area.id}">Удалить</a></td>
   </tr>
 </c:forEach>
 

@@ -29,7 +29,7 @@ public class AppConfig {
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/music?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
         dataSource.setUsername("root");
-        dataSource.setPassword("root");
+        dataSource.setPassword("qwerty");
         return dataSource;
     }
 

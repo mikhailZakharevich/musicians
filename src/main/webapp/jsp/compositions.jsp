@@ -44,8 +44,12 @@
                 <td>${composition.artist}</td>
                 <td>${composition.duration}</td>
                 <td>${composition.rating}</td>
-                <td><a href="${pageContext.request.contextPath}/composition/${composition.id}">Показать</a> </td>
-                <td><a href="${pageContext.request.contextPath}/composition/delete/${composition.id}">Удалить</a></td>
+                <td>
+                    <ul>
+                        <li><a href="${pageContext.request.contextPath}/composition/${composition.id}">Показать</a> </li>
+                        <li><a href="${pageContext.request.contextPath}/composition/delete/${composition.id}">Удалить</a></li>
+                    </ul>
+                </td>
             </tr>
         </c:forEach>
 

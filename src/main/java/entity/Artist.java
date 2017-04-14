@@ -8,12 +8,12 @@ import java.util.List;
 /**
  * Created by eugen on 3/3/17.
  */
-//@Entity
+@Entity
 public class Artist {
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    //@Column(name = "artist_id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "artist_id")
     private Integer id;
 
     private String name;

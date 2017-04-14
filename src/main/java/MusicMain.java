@@ -17,10 +17,13 @@ public class MusicMain {
         AreaService areaService = context.getBean(AreaService.class);
         UserService userService = context.getBean(UserService.class);
         CompositionService compositionService = context.getBean(CompositionService.class);
-        System.out.println(areaService.findAll());
+        ArtistService artistService = context.getBean(ArtistService.class);
+
+        artistService.save(generateArtist());
+        System.out.println(artistService.findAll());
         //userService.save(generateUser());
-        System.out.println(userService.findAll());
-        System.out.println(compositionService.findAll());
+        //System.out.println(userService.findAll());
+        //System.out.println(compositionService.findAll());
         /*areaService.save(generateArea());
         System.out.println(areaService.findAll());*/
         //System.out.println(areaService.getAreaByName("Jazz*");
@@ -33,6 +36,13 @@ public class MusicMain {
         composition.setDuration(4.35f);
         composition.setRating(5.0f);
         return composition;
+    }
+
+    private static Artist generateArtist() {
+        Artist artist = new Artist();
+        artist.setName("Slava");
+        artist.setSurname("Vakarchuk");
+        return artist;
     }
 
     private static User generateUser() {

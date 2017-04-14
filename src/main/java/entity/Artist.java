@@ -63,7 +63,6 @@ public class Artist {
         return "Artist{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                //", Instrument=" + instrumentList +
                 '}';
     }
 

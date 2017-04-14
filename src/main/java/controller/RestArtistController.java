@@ -12,9 +12,9 @@ import java.util.List;
 /**
  * Created by admin on 13.04.2017.
  */
-@Controller
-@RequestMapping("/artist")
-public class RestArtistController {
+//@Controller
+//@RequestMapping("/artist")
+/*public class RestArtistController {
 
     @Autowired
     ArtistService artistService;
@@ -30,4 +30,4 @@ public class RestArtistController {
         artistService.save(artist);
         return "New artist was added";
     }
-}
+}*/

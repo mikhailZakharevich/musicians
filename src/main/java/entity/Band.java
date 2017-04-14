@@ -1,11 +1,17 @@
 package entity;
 
+import javax.persistence.*;
 import java.util.List;
 
 /**
  * Created by ������� on 12.03.2017.
  */
+
 public class Band {
+
+
+    private Integer id;
+
     private String name;
 
     private List<Artist> artists;

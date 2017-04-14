@@ -8,20 +8,22 @@ import java.util.List;
 /**
  * Created by eugen on 3/3/17.
  */
-@Entity
+//@Entity
 public class Artist {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "artist_id")
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Column(name = "artist_id")
     private Integer id;
 
     private String name;
 
     private String surname;
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    private Band band;
+    //@ManyToOne(fetch=FetchType.LAZY)
+    //private Band band;
+
+    //private List<Instrument> instrumentList;
 
     public Artist() {
     }
@@ -31,8 +33,6 @@ public class Artist {
 
         this.surname = surname;
     }
-
-    private List<Instrument> instrumentList;
 
     public String getName() {
         return name;
@@ -50,20 +50,20 @@ public class Artist {
         this.surname = surname;
     }
 
-    public List<Instrument> getInstrumentList() {
+    /*public List<Instrument> getInstrumentList() {
         return instrumentList;
-    }
+    }*/
 
-    public void setInstrumentList(List<Instrument> instrumentList) {
+    /*public void setInstrumentList(List<Instrument> instrumentList) {
         this.instrumentList = instrumentList;
-    }
+    }*/
 
     @Override
     public String toString() {
         return "Artist{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", Instrument=" + instrumentList +
+                //", Instrument=" + instrumentList +
                 '}';
     }
 

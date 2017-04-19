@@ -1,6 +1,5 @@
 package service;
 
-import dao.ArtistDao;
 import dao.ArtistRepository;
 import entity.Artist;
 import org.springframework.beans.factory.annotation.Autowired;

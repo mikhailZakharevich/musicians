@@ -27,8 +27,8 @@ CREATE TABLE user_composition(
     CONSTRAINT FK_COMPOSITION FOREIGN KEY (composition_id) REFERENCES composition (composition_id)
 ) ENGINE = InnoDB
   DEFAULT CHARACTER SET = utf8;
-  
-  
+
+
 CREATE TABLE `music`.`instrument` (
   `instrument_id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
@@ -44,7 +44,7 @@ DEFAULT CHARACTER SET = utf8;
   PRIMARY KEY (`id`)
 )ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
-  
+
   CREATE TABLE `music`.`event` (
   `event_id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
@@ -56,7 +56,7 @@ DEFAULT CHARACTER SET = utf8;
     REFERENCES `music`.`area` (`id`)
 )ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
-    
+
   CREATE TABLE `music`.`band` (
   `band_id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
@@ -64,7 +64,7 @@ DEFAULT CHARACTER SET = utf8;
   PRIMARY KEY (`band_id`)
 )ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
-  
+
   CREATE TABLE `music`.`artist` (
   `artist_id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
@@ -76,7 +76,7 @@ DEFAULT CHARACTER SET = utf8;
     REFERENCES `music`.`band` (`band_id`)
 )ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
-    
+
     CREATE TABLE `music`.`ticket` (
   `ticket_id` INT NOT NULL AUTO_INCREMENT,
   `price` FLOAT NOT NULL,
@@ -87,7 +87,7 @@ DEFAULT CHARACTER SET = utf8;
     REFERENCES `music`.`event` (`event_id`)
 )ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
-    
+
     CREATE TABLE `music`.`artist_instrument` (
   `artist_id` INT NOT NULL,
   `instrument_id` INT NOT NULL,

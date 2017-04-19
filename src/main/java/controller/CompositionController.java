@@ -20,7 +20,7 @@ public class CompositionController {
     CompositionService compositionService;
 
     @GetMapping
-    public String getComposition(Model model) {
+    public String getCompositions(Model model) {
         model.addAttribute("compositions", compositionService.findAll());
         return "compositions";
     }

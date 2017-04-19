@@ -1,35 +1,36 @@
 package service;
 
-import dao.BandDao;
+import dao.BandRepository;
 import entity.Band;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by ������� on 12.03.2017.
  */
+@Service
 public class BandService {
 
     @Autowired
-    BandDao bandDao;
+    BandRepository bandRepository;
 
     public Band findById(Integer id) {
-        System.out.println("Method findById from bandService");
-        return bandDao.findById(id);
+        return bandRepository.findOne(id);
     }
 
+
     public List<Band> findAll() {
-        return bandDao.findAll();
+        return (List<Band>) bandRepository.findAll();
     }
 
     public void save(Band band) {
-        bandDao.save(band);
+        bandRepository.save(band);
     }
 
-
     public void delete(Integer id) {
-        bandDao.delete(id);
+        bandRepository.delete(id);
     }
 
 }

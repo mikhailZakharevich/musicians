@@ -85,6 +85,8 @@ DEFAULT CHARACTER SET = utf8;
   CONSTRAINT `FK_EVENT`
     FOREIGN KEY (`event`)
     REFERENCES `music`.`event` (`event_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 )ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
     

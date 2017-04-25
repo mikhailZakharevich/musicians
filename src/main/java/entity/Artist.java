@@ -3,6 +3,7 @@ package entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,10 +21,14 @@ public class Artist {
 
     private String surname;
 
-    //@ManyToOne(fetch=FetchType.LAZY)
-    //private Band band;
+    @ManyToOne(fetch=FetchType.LAZY)
+    private Band band;
 
-    //private List<Instrument> instrumentList;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "artist_instrument", joinColumns = {
+            @JoinColumn(name = "artist_id") },
+            inverseJoinColumns = { @JoinColumn(name = "instrument_id") })
+    private List<Instrument> instruments = new ArrayList<Instrument>();
 
     public Artist() {
     }
@@ -50,13 +55,21 @@ public class Artist {
         this.surname = surname;
     }
 
-    /*public List<Instrument> getInstrumentList() {
-        return instrumentList;
-    }*/
+    public Band getBand() {
+        return band;
+    }
 
-    /*public void setInstrumentList(List<Instrument> instrumentList) {
-        this.instrumentList = instrumentList;
-    }*/
+    public void setBand(Band band) {
+        this.band = band;
+    }
+
+    public List<Instrument> getInstruments() {
+        return instruments;
+    }
+
+    public void setInstruments(List<Instrument> instruments) {
+        this.instruments = instruments;
+    }
 
     @Override
     public String toString() {

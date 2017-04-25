@@ -4,7 +4,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import service.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,9 +21,14 @@ public class MusicMain {
         UserService userService = context.getBean(UserService.class);
         CompositionService compositionService = context.getBean(CompositionService.class);
         ArtistService artistService = context.getBean(ArtistService.class);
+        TicketService ticketService = context.getBean(TicketService.class);
+        EventService eventService = context.getBean(EventService.class);
 
-        artistService.save(generateArtist());
-        System.out.println(artistService.findAll());
+        ticketService.save(generateTicket());
+        System.out.println(eventService.findAll());
+        System.out.println(ticketService.findAll());
+        //  artistService.save(generateArtist());
+        //System.out.println(artistService.findAll());
         //userService.save(generateUser());
         //System.out.println(userService.findAll());
         //System.out.println(compositionService.findAll());
@@ -60,6 +68,33 @@ public class MusicMain {
         area.setAddress("Poetry square");
         area.setNumOfPlaces(100);
         return area;
+    }
+    private static Event generateEvent()
+    {
+        Date date=null;
+        String s="05.09.2013";
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+        try{
+            date=format.parse(s);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Area area=generateArea();
+
+        Event event=new Event();
+        event.setArea(area);
+        event.setDate(date);
+        event.setName("WInter");
+        return event;
+    }
+
+    private static Ticket generateTicket()
+    {
+        Event event=generateEvent();
+        Ticket ticket = new Ticket();
+        ticket.setEvent(event);
+        ticket.setPrice((float)200);
+        return ticket;
     }
 
 }

@@ -1,7 +1,6 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Created by admin on 15.03.2017.
@@ -19,7 +18,6 @@ public class Area {
 
     @Column(name = "places")
     private Integer numberOfPlaces;
-
 
     public Integer getId() {
         return id;

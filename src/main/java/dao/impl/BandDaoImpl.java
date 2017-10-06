@@ -5,9 +5,6 @@ import entity.Band;
 
 import java.util.List;
 
-/**
- * Created by Николай on 12.03.2017.
- */
 public class BandDaoImpl implements BandDao {
 
     public Band findById(Integer id) {

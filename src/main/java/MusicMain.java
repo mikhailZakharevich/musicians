@@ -10,9 +10,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by eugen on 3/3/17.
- */
 public class MusicMain {
 
     public static void main(String[] args) {

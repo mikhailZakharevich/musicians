@@ -15,9 +15,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-/**
- * Created by eugen on 3/10/17.
- */
 @Configuration
 @ComponentScan(basePackages = {"service","dao"})
 @EnableJpaRepositories(basePackages = "dao")
